@@ -23,7 +23,6 @@ ORDER BY Total_Views DESC
 LIMIT 10;
 ```
 
----
 
 ## 2. What is the average IMDb rating for each genre?
 
@@ -35,7 +34,6 @@ GROUP BY Genre
 ORDER BY Average_IMDb_Rating DESC;
 ```
 
----
 
 ## 3. Which country has produced the highest number of Netflix titles?
 
@@ -47,7 +45,6 @@ GROUP BY Country
 ORDER BY Total_Titles DESC;
 ```
 
----
 
 ## 4. How has Netflix content grown over the years?
 
@@ -59,7 +56,6 @@ GROUP BY Release_Year
 ORDER BY Release_Year;
 ```
 
----
 
 ## 5. What is the distribution of Movies vs TV Shows on Netflix?
 
@@ -71,7 +67,6 @@ FROM netflixreal
 GROUP BY Type;
 ```
 
----
 
 ## 6. Which genre generates the highest total audience views?
 
@@ -83,7 +78,6 @@ GROUP BY Genre
 ORDER BY Total_Views DESC;
 ```
 
----
 
 ## 7. Which release year generated the highest total views?
 
@@ -96,7 +90,6 @@ ORDER BY Total_Views DESC
 LIMIT 1;
 ```
 
----
 
 ## 8. Which rating category (U, UA 13+, UA 16+, A) has the most content?
 
@@ -108,7 +101,6 @@ GROUP BY Rating
 ORDER BY Total_Content DESC;
 ```
 
----
 
 ## 9. Find the Top 10 most frequently appearing actors in the Cast column.
 
@@ -121,7 +113,6 @@ ORDER BY Frequency DESC
 LIMIT 10;
 ```
 
----
 
 ## 10. Which director has generated the highest total audience views across all their titles?
 
@@ -164,9 +155,8 @@ The insights gathered from this analysis highlight Netflix’s strategic pivot t
 - **Recommendation & Sentiment Analysis** -
    Perform sentiment analysis on user reviews/ratings to understand content satisfaction beyond catalog size.
 
-## Tools Used
-- SQL (MySQL)
-- Microsoft Excel
+
+
   
 
 ⭐ If you found this project useful, don't forget to Star this repository!
