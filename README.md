@@ -10,20 +10,131 @@ Analyze Netflix’s catalog of movies and TV shows to identify trends in content
 
 The dataset used in this project is the **Netflix Movies and TV Shows Dataset** from Chatgpt.
 
-# Business Problems
+# Business Problems & SQL Solutions
 
-1. Which are the Top 10 most popular titles based on total views?
-2. What is the average IMDb rating for each genre?
-3. Which country has produced the highest number of Netflix titles?
-4. How has Netflix content grown over the years?
-5. What is the distribution of Movies vs TV Shows on Netflix?
-6. Which genre generates the highest total audience views?
-7. Which release year generated the highest total views?
-8. Which rating category (U, UA 13+, UA 16+, A) has the most content?
-9. Find the top 10 most frequently appearing actors in the Cast column.
-10. Which director has generated the highest total Views_Million across all their titles?
+## 1. Which are the Top 10 most popular titles based on total views?
 
-# Findings
+```sql
+SELECT Title,
+       SUM(Views_Million) AS Total_Views
+FROM netflixreal
+GROUP BY Title
+ORDER BY Total_Views DESC
+LIMIT 10;
+```
+
+---
+
+## 2. What is the average IMDb rating for each genre?
+
+```sql
+SELECT Genre,
+       ROUND(AVG(IMDb_Rating),2) AS Average_IMDb_Rating
+FROM netflixreal
+GROUP BY Genre
+ORDER BY Average_IMDb_Rating DESC;
+```
+
+---
+
+## 3. Which country has produced the highest number of Netflix titles?
+
+```sql
+SELECT Country,
+       COUNT(*) AS Total_Titles
+FROM netflixreal
+GROUP BY Country
+ORDER BY Total_Titles DESC;
+```
+
+---
+
+## 4. How has Netflix content grown over the years?
+
+```sql
+SELECT Release_Year,
+       COUNT(*) AS Total_Titles
+FROM netflixreal
+GROUP BY Release_Year
+ORDER BY Release_Year;
+```
+
+---
+
+## 5. What is the distribution of Movies vs TV Shows on Netflix?
+
+```sql
+SELECT Type,
+       COUNT(*) AS Total_Content,
+       ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM netflixreal),2) AS Percentage
+FROM netflixreal
+GROUP BY Type;
+```
+
+---
+
+## 6. Which genre generates the highest total audience views?
+
+```sql
+SELECT Genre,
+       SUM(Views_Million) AS Total_Views
+FROM netflixreal
+GROUP BY Genre
+ORDER BY Total_Views DESC;
+```
+
+---
+
+## 7. Which release year generated the highest total views?
+
+```sql
+SELECT Release_Year,
+       SUM(Views_Million) AS Total_Views
+FROM netflixreal
+GROUP BY Release_Year
+ORDER BY Total_Views DESC
+LIMIT 1;
+```
+
+---
+
+## 8. Which rating category (U, UA 13+, UA 16+, A) has the most content?
+
+```sql
+SELECT Rating,
+       COUNT(*) AS Total_Content
+FROM netflixreal
+GROUP BY Rating
+ORDER BY Total_Content DESC;
+```
+
+---
+
+## 9. Find the Top 10 most frequently appearing actors in the Cast column.
+
+```sql
+SELECT Cast,
+       COUNT(*) AS Frequency
+FROM netflixreal
+GROUP BY Cast
+ORDER BY Frequency DESC
+LIMIT 10;
+```
+
+---
+
+## 10. Which director has generated the highest total audience views across all their titles?
+
+```sql
+SELECT Director,
+       SUM(Views_Million) AS Total_Views
+FROM netflixreal
+GROUP BY Director
+ORDER BY Total_Views DESC
+LIMIT 1;
+```
+
+## Findings
 
 - **Genre Popularity** -
     Movies, Dramas, and Comedies dominate the platform's library, showing strong global appeal across diverse user segments.
@@ -37,12 +148,12 @@ The dataset used in this project is the **Netflix Movies and TV Shows Dataset** 
 - **Content Ratings** -
    A large portion of Netflix's catalog consists of mature content (TV-MA and R), indicating a focus on young adult and adult audiences over children's programming.
 
-# Conclusions
+## Conclusions
 
 The insights gathered from this analysis highlight Netflix’s strategic pivot toward global content expansion and original TV show production.By heavily investing in localized content across key markets like India, South Korea, and Latin America, Netflix drives subscriber retention and regional growth.
  Furthermore, the platform's focus on episodic TV series caters to high user engagement and longer viewing hours.
 
-# Future Work
+## Future Work
 
 - **User Engagement Metrics** -
    Integrate subscriber viewing hours, completion rates, and active user metrics to evaluate which titles drive long-term engagement.
@@ -52,3 +163,11 @@ The insights gathered from this analysis highlight Netflix’s strategic pivot t
 
 - **Recommendation & Sentiment Analysis** -
    Perform sentiment analysis on user reviews/ratings to understand content satisfaction beyond catalog size.
+
+## Tools Used
+- SQL (MySQL)
+- Microsoft Excel
+  
+
+⭐ If you found this project useful, don't forget to Star this repository!
+
