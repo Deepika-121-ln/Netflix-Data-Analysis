@@ -25,32 +25,30 @@ The dataset used in this project is the **Netflix Movies and TV Shows Dataset** 
 
 # Findings
 
-- **Genre Popularity**
+- **Genre Popularity** -
     Movies, Dramas, and Comedies dominate the platform's library, showing strong global appeal across diverse user segments.
 
-- **Release Year & Addition Trends**
+- **Release Year & Addition Trends** -
   Netflix has seen an increasing number of content additions,especially in the last few years ,with a growing preference for TV shows over movies.
 
-- **Regional Content Distribution**
+- **Regional Content Distribution** -
   The United States and India are the leading contributors to Netflix's library, followed by significant growth in South Korean and European titles.
 
-- **Content Ratings**
+- **Content Ratings** -
    A large portion of Netflix's catalog consists of mature content (TV-MA and R), indicating a focus on young adult and adult audiences over children's programming.
 
 # Conclusions
 
-The insights gathered from this analysis highlight Netflix’s strategic pivot toward global content expansion and original TV show production.
-
- By heavily investing in localized content across key markets like India, South Korea, and Latin America, Netflix drives subscriber retention and regional growth.
+The insights gathered from this analysis highlight Netflix’s strategic pivot toward global content expansion and original TV show production.By heavily investing in localized content across key markets like India, South Korea, and Latin America, Netflix drives subscriber retention and regional growth.
  Furthermore, the platform's focus on episodic TV series caters to high user engagement and longer viewing hours.
 
 # Future Work
 
-- **User Engagement Metrics**
+- **User Engagement Metrics** -
    Integrate subscriber viewing hours, completion rates, and active user metrics to evaluate which titles drive long-term engagement.
 
-- **Comparative Streaming Analysis**
+- **Comparative Streaming Analysis** -
    Perform a cross-platform comparative analysis against competitors (e.g., Amazon Prime Video, Disney+) to identify content gaps and market opportunities.
 
-- **Recommendation & Sentiment Analysis**
+- **Recommendation & Sentiment Analysis** -
    Perform sentiment analysis on user reviews/ratings to understand content satisfaction beyond catalog size.
